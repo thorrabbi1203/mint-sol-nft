@@ -1,20 +1,17 @@
-import { Connection, Keypair, PublicKey } from "@solana/web3.js";
 import {
-  Metaplex,
-  keypairIdentity,
   bundlrStorage,
-  toMetaplexFile,
-  toBigNumber,
   CreateCandyMachineInput,
   DefaultCandyGuardSettings,
-  CandyMachineItem,
-  toDateTime,
+  keypairIdentity,
+  Metaplex,
   sol,
-  TransactionBuilder,
-  CreateCandyMachineBuilderContext,
+  toBigNumber,
+  toDateTime,
 } from "@metaplex-foundation/js";
+import { Connection, Keypair, PublicKey } from "@solana/web3.js";
 import base58 from "bs58";
-const PRIVATE_KEY = "";
+const PRIVATE_KEY =
+  "26fkMguDRiVSBMxtkj51g5Pt114vwmcCMzSTgBwe7AiQKU4M8YZa3hZsnvvARPABJZXYPAUBYrGLEjz3m8BqokJD";
 const WALLET = Keypair.fromSecretKey(base58.decode(PRIVATE_KEY));
 const QUICKNODE_RPC = "https://api.devnet.solana.com";
 const SOLANA_CONNECTION = new Connection(QUICKNODE_RPC);

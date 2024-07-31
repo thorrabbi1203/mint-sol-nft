@@ -11,7 +11,7 @@ import * as fs from "fs";
 import base58 from "bs58";
 const QUICKNODE_RPC = "https://api.devnet.solana.com";
 const SOLANA_CONNECTION = new Connection(QUICKNODE_RPC);
-const PRIVATE_KEY = "";
+const PRIVATE_KEY = "26fkMguDRiVSBMxtkj51g5Pt114vwmcCMzSTgBwe7AiQKU4M8YZa3hZsnvvARPABJZXYPAUBYrGLEjz3m8BqokJD";
 const WALLET = Keypair.fromSecretKey(base58.decode(PRIVATE_KEY));
 const METAPLEX = Metaplex.make(SOLANA_CONNECTION)
   .use(keypairIdentity(WALLET))
@@ -26,7 +26,7 @@ const CONFIG = {
   uploadPath: "uploads/",
   imgFileName: "image.jpg",
   imgType: "image/png",
-  imgName: "QuickNode Pixel 123",
+  imgName: "QuickNode Pixel thao test",
   description: "Pixel infrastructure for everyone!",
   attributes: [
     { trait_type: "Speed", value: "Quick" },
@@ -94,7 +94,7 @@ async function mintNft(
     },
     { commitment: "finalized" }
   );
-  // const res = await METAPLEX.nfts().mint({ nftOrSft: sft, amount: token(5) }, { commitment: "finalized" })
+  const res = await METAPLEX.nfts().mint({ nftOrSft: sft, amount: token(5) }, { commitment: "finalized" })
   console.log(`   Success!🎉`);
   console.log(
     `   Minted NFT: https://explorer.solana.com/address/${sft.address}?cluster=devnet`
